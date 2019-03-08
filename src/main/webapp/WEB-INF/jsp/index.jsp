@@ -5,7 +5,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gerechten</title>
+    <title>Home</title>
+    <link href="/./css/style.css" rel="stylesheet">
 </head>
 <body>
 <ul>

@@ -15,20 +15,22 @@ public class MenuController {
     @Autowired
     private WeekMenu weekMenu;
 
-    @GetMapping("weekmenu")
+    @GetMapping("/weekmenu")
     public List<DagMenu> getMenus() {
         return weekMenu.getAllMenus();
     }
 
-    @GetMapping("dagmenu/add")
-    public List<DagMenu> getAllMenus(){
-        return weekMenu.getAllMenus();
-    }
 
-    @PostMapping("dagmenu/add")
+    @PostMapping("/dagmenu/add")
     @ResponseStatus(HttpStatus.CREATED)
     public List<DagMenu> addDagMenu(@RequestBody @Valid DagMenu dagMenu){
         weekMenu.voegMenuToe(dagMenu);
-       return getAllMenus();
+       return weekMenu.getAllMenus();
+    }
+
+    @PutMapping("/dagmenu/change/{date}")
+    public List<DagMenu> updateDagmenu(@PathVariable("date") String date, @RequestBody @Valid DagMenu dagmenu){
+        weekMenu.updateDagmenu(date, dagmenu);
+        return weekMenu.getAllMenus();
     }
 }

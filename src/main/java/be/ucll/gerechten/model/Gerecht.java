@@ -23,14 +23,14 @@ public class Gerecht {
         this.price = price;
         this.name = name;
     }*/
-
+    public Gerecht(){}
     public Gerecht(double price, String name, String type) {
         this.price = price;
         this.name = name;
         setType(type);
     }
 
-    private void setType(String type) {
+    public void setType(String type) {
         boolean found = false;
         for (TypeGerecht t : TypeGerecht.values()) {
             if (t.toString().equals(type)) {

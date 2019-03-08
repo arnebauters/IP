@@ -10,10 +10,10 @@ import java.time.format.DateTimeFormatterBuilder;
 public class DagMenu {
 
     @NotNull
-    private DayOfWeek day;
+    private String day;
 
     @NotNull
-    private LocalDate date;
+    private String date;
 
     @Valid
     private Gerecht soep;
@@ -22,31 +22,33 @@ public class DagMenu {
     @Valid
     private Gerecht veggie;
 
-    public DagMenu(DayOfWeek day, LocalDate date){
+    public DagMenu(){}
+
+    public DagMenu(String day, String date){
         this.day = day;
         this.date = date;
     }
 
-    public DagMenu(DayOfWeek day, LocalDate date, Gerecht soep, Gerecht dagschotel, Gerecht veggie){
+    public DagMenu(String day, String date, Gerecht soep, Gerecht dagschotel, Gerecht veggie){
         this(day, date);
         this.soep = soep;
         this.dagschotel = dagschotel;
         this.veggie = veggie;
     }
 
-    public DayOfWeek getDay() {
+    public String getDay() {
         return day;
     }
 
-    private void setDay(DayOfWeek day) {
+    private void setDay(String day) {
         this.day = day;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    private void setDate(LocalDate date) {
+    private void setDate(String date) {
         this.date = date;
     }
 
@@ -54,7 +56,7 @@ public class DagMenu {
         return soep;
     }
 
-    private void setSoep(Gerecht soep) {
+    public void setSoep(Gerecht soep) {
         if (soep.getType().equals(TypeGerecht.soep.toString())) {
             this.soep = soep;
         }else {

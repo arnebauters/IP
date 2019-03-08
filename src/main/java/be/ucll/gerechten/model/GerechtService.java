@@ -49,8 +49,14 @@ public class GerechtService {
         gerechten.add(gerecht);
     }
 
-    public void deleteFeedback(Gerecht gerecht) {
+    public void deleteGerecht(Gerecht gerecht) {
         gerechten.remove(gerecht);
     }
 
+    public void updateGerecht(String naam, Gerecht gerecht) {
+        Gerecht oudGerecht = findGerechtByName(naam);
+        oudGerecht.setName(gerecht.getName());
+        oudGerecht.setPrice(gerecht.getPrice());
+        oudGerecht.setType(gerecht.getType());
+    }
 }

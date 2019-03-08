@@ -2,8 +2,7 @@ package be.ucll.gerechten.model;
 
 import org.springframework.stereotype.Service;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +12,8 @@ public class WeekMenu {
     private List<DagMenu> menus = new ArrayList<DagMenu>();
 
     public WeekMenu(){
-        DagMenu menu1 = new DagMenu(DayOfWeek.MONDAY, LocalDate.now());
-        DagMenu menu2 = new DagMenu(DayOfWeek.TUESDAY, LocalDate.now());
+        DagMenu menu1 = new DagMenu("MONDAY", "04-03-2019");
+        DagMenu menu2 = new DagMenu("TUESDAY", "05-03-2019");
         menu1.voegDagschotelToe(new Gerecht(5, "Spaghetti", "dagschotel"));
         menu1.voegSoepToe(new Gerecht(2.5,"Tomatensoep met balletjes","soep" ));
         menu1.voegVeggieToe(new Gerecht(5.5, "Vol-aux-vents","veggie"));
@@ -35,5 +34,15 @@ public class WeekMenu {
 
     public List<DagMenu> getAllMenus(){
         return menus;
+    }
+
+    public void updateDagmenu(String date, DagMenu dagmenu) {
+        for (DagMenu menu: menus){
+            if (menu.getDate().equals(date)){
+                menu.setSoep(dagmenu.getSoep());
+                menu.setVeggie(dagmenu.getVeggie());
+                menu.setDagschotel(dagmenu.getDagschotel());
+            }
+        }
     }
 }

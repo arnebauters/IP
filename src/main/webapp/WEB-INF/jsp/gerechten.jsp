@@ -3,32 +3,39 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Menu - JSP version</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="/./css/style.css">
+    <title>Gerechten</title>
 </head>
 <body>
-<h1>Gerechten</h1>
-<c:choose>
+<div id="container">
+    <jsp:include page="header.jsp">
+        <jsp:param name="title" value="Home"/>
+    </jsp:include>
+    <c:choose>
     <c:when test="${gerechten.size() != 0}">
-<table>
-    <thead>
-    <th>Name</th>
-    <th>Price</th>
-    </thead>
-    <tbody>
-    <c:forEach var="gerecht" items="${gerechten}">
-        <tr>
-            <td>${gerecht.name}</td>AC
-            <td>${gerecht.price}</td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-</c:when>
-<c:otherwise>
-    <p>Er staan geen gerechten op het menu.</p>
-</c:otherwise>
-</c:choose>
-<form action="/gerechten/"></form>
+    <main>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            <c:forEach var="gerecht" items="${gerechten}">
+                <tr>
+                    <td>${gerecht.name}</td>
+                    <td>${gerecht.price}</td>
+                </tr>
+            </c:forEach>
+            <caption>Gerechten overview</caption>
+        </table>
+        </c:when>
+        <c:otherwise>
+            <p>Er staan geen gerechten op het menu.</p>
+        </c:otherwise>
+        </c:choose>
+    </main>
+</div>
 </body>
 </html>
