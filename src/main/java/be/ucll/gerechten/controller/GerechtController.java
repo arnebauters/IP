@@ -67,7 +67,7 @@ public class GerechtController implements WebMvcConfigurer {
         if (confirm.equals("Nee")){
             return new RedirectView("/gerechten/change");
         }else {
-            Gerecht gerecht = gerechtService.findGerechtByName(name);
+            Gerecht gerecht = gerechtService.findGerechtById(name);
             gerechtService.deleteGerecht(gerecht);
             return new RedirectView("/gerechten/change");
         }
@@ -75,7 +75,7 @@ public class GerechtController implements WebMvcConfigurer {
 
     @GetMapping("/gerechten/update")
     public String updatePagina(@RequestParam (name = "beschrijving") String name, Model model){
-        Gerecht gerecht = gerechtService.findGerechtByName(name);
+        Gerecht gerecht = gerechtService.findGerechtById(name);
         model.addAttribute("gerecht", gerecht);
         return "updateConfirm";
     }

@@ -1,5 +1,7 @@
 package be.ucll.gerechten.model;
 
+import be.ucll.gerechten.repository.GerechtRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -8,55 +10,36 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 public class GerechtService {
-    List<Gerecht> gerechten = new ArrayList<Gerecht>();
+   @Autowired
+    GerechtRepository gerechtRepository;
 
     // hardcode some values, definitively not the way to go !!!!
     public GerechtService() {
-        gerechten.add(new Gerecht(5, "Spaghetti", "dagschotel"));
-        gerechten.add(new Gerecht(2.5,"Tomatensoep met balletjes","dagschotel" ));
-        gerechten.add(new Gerecht(5.5, "Vol-aux-vents","dagschotel"));
     }
 
     // just return the whole list, JSP page takes care of presentation
     public List<Gerecht> getAllGerechten() {
-        return gerechten;
+        return gerechtRepository.findAll();
     }
 
-    // look for a feedback by id (see controller)
-    /*public Feedback findFeedbackById(int id) {
-        for(Feedback feedback : feedbacks){
-            if(feedback.getId() == id){
-                return feedback;
-            }
-        }
-        //return null;
-        // beter nog: throw exception!
-        throw new IllegalArgumentException("You really messed up your numbers!");
-    }*/
-
     // look for a feedback by name (see controller)
-    public Gerecht findGerechtByName(String name) {
-        for(Gerecht gerecht : gerechten){
-            if(name.equals(gerecht.getName())){
-                return gerecht;
-            }
-        }
-        return null;
-        // beter nog: throw exception!
+    public Gerecht findGerechtById(String name) {
+        return gerechtRepository.findById(name).orElseThrow(IllegalArgumentException::new);
     }
 
     public void addGerecht(Gerecht gerecht) {
-        gerechten.add(gerecht);
+        gerechtRepository.save(gerecht);
     }
 
     public void deleteGerecht(Gerecht gerecht) {
-        gerechten.remove(gerecht);
+        gerechtRepository.delete(gerecht);
     }
 
     public void updateGerecht(String naam, Gerecht gerecht) {
-        Gerecht oudGerecht = findGerechtByName(naam);
-        oudGerecht.setName(gerecht.getName());
-        oudGerecht.setPrice(gerecht.getPrice());
-        oudGerecht.setType(gerecht.getType());
+        gerecht.setName(naam);
+        Gerecht gerecht1 = this.findGerechtById(naam);
+        gerecht.setType(gerecht1.getType());
+        gerecht.setPrice(gerecht1.getPrice());
+        gerechtRepository.save(gerecht);
     }
 }

@@ -1,5 +1,7 @@
 package be.ucll.gerechten.model;
 
+import be.ucll.gerechten.repository.MenuRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
@@ -8,41 +10,32 @@ import java.util.List;
 
 @Service
 public class WeekMenu {
+    @Autowired
+    MenuRepository menuRepository;
 
-    private List<DagMenu> menus = new ArrayList<DagMenu>();
-
-    public WeekMenu(){
-        DagMenu menu1 = new DagMenu("MONDAY", "04-03-2019");
-        DagMenu menu2 = new DagMenu("TUESDAY", "05-03-2019");
-        menu1.voegDagschotelToe(new Gerecht(5, "Spaghetti", "dagschotel"));
-        menu1.voegSoepToe(new Gerecht(2.5,"Tomatensoep met balletjes","soep" ));
-        menu1.voegVeggieToe(new Gerecht(5.5, "Vol-aux-vents","veggie"));
-        menu2.voegDagschotelToe(new Gerecht(5, "Spaghetti", "dagschotel"));
-        menu2.voegSoepToe(new Gerecht(2.5,"Tomatensoep met balletjes","soep" ));
-        menu2.voegVeggieToe(new Gerecht(5.5, "Vol-aux-vents","veggie"));
-        menus.add(menu1);
-        menus.add(menu2);
+    public WeekMenu() {
     }
 
-    public void voegMenuToe(DagMenu menu){
-        menus.add(menu);
+    public void addMenu(DagMenu menu) {
+        menuRepository.save(menu);
     }
 
-    public void verwijderMenu(DagMenu menu){
-        menus.remove(menu);
+    public void deleteMenu(DagMenu menu) {
+        menuRepository.delete(menu);
     }
 
-    public List<DagMenu> getAllMenus(){
-        return menus;
+    public List<DagMenu> getAllMenus() {
+        return menuRepository.findAll();
+    }
+
+    public DagMenu findMenuByDate(String date) {
+        return menuRepository.findById(date).orElseThrow(IllegalArgumentException::new);
     }
 
     public void updateDagmenu(String date, DagMenu dagmenu) {
-        for (DagMenu menu: menus){
-            if (menu.getDate().equals(date)){
-                menu.setSoep(dagmenu.getSoep());
-                menu.setVeggie(dagmenu.getVeggie());
-                menu.setDagschotel(dagmenu.getDagschotel());
-            }
-        }
+        DagMenu menu = findMenuByDate(date);
+        menu.setSoep(dagmenu.getSoep());
+        menu.setVeggie(dagmenu.getVeggie());
+        menu.setDagschotel(dagmenu.getDagschotel());
     }
 }

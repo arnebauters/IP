@@ -1,11 +1,13 @@
 package be.ucll.gerechten.model;
 
-import org.springframework.beans.factory.annotation.Value;
-
+import javax.persistence.*;
 import javax.validation.constraints.*;
 
+@Entity
+@Table(name = "gerecht")
 public class Gerecht {
 
+    @Id
     @NotNull
     @NotEmpty
     @Size(min = 4, max = 50)
@@ -18,12 +20,8 @@ public class Gerecht {
     @NotNull
     private String type;
 
-
-    /*public Gerecht(double price, String name) {
-        this.price = price;
-        this.name = name;
-    }*/
     public Gerecht(){}
+
     public Gerecht(double price, String name, String type) {
         this.price = price;
         this.name = name;

@@ -1,26 +1,37 @@
 package be.ucll.gerechten.model;
 
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+
+@Entity
 public class DagMenu {
 
     @NotNull
     private String day;
 
+    @Id
     @NotNull
     private String date;
 
     @Valid
+    @NotNull
     private Gerecht soep;
+
     @Valid
-    private Gerecht dagschotel;
-    @Valid
+    @NotNull
     private Gerecht veggie;
+    @Valid
+    @NotNull
+    private Gerecht dagschotel;
 
     public DagMenu(){}
 
@@ -32,8 +43,8 @@ public class DagMenu {
     public DagMenu(String day, String date, Gerecht soep, Gerecht dagschotel, Gerecht veggie){
         this(day, date);
         this.soep = soep;
-        this.dagschotel = dagschotel;
         this.veggie = veggie;
+        this.dagschotel = dagschotel;
     }
 
     public String getDay() {
@@ -52,65 +63,36 @@ public class DagMenu {
         this.date = date;
     }
 
-    public Gerecht getSoep() {
-        return soep;
-    }
-
-    public void setSoep(Gerecht soep) {
-        if (soep.getType().equals(TypeGerecht.soep.toString())) {
-            this.soep = soep;
-        }else {
-            throw new IllegalArgumentException("Dit gerecht is geen soep");
+    public void setSoep(Gerecht soep){
+        if (!(soep.getType().equals(TypeGerecht.soep))){
+            throw new IllegalArgumentException();
         }
+       this.soep = soep;
     }
 
-    public Gerecht getDagschotel() {
-        return dagschotel;
-    }
-
-    public void setDagschotel(Gerecht dagschotel) {
-        if (dagschotel.getType().equals(TypeGerecht.dagschotel.toString())) {
-            this.dagschotel = dagschotel;
-        }else {
-            System.out.println(dagschotel.getType());
-            System.out.println(TypeGerecht.dagschotel);
-            throw new IllegalArgumentException("Dit gerecht is geen dagschotel");
+    public void setVeggie(Gerecht veggie){
+        if (!(veggie.getType().equals(TypeGerecht.veggie))){
+            throw new IllegalArgumentException();
         }
+        this.veggie = veggie;
     }
 
-    public Gerecht getVeggie() {
-        return veggie;
-    }
-
-    public void setVeggie(Gerecht veggie) {
-        if (veggie.getType().equals(TypeGerecht.veggie.toString())) {
-            this.veggie = veggie;
-        }else {
-            throw new IllegalArgumentException("Dit gerecht is geen veggie");
+    public void setDagschotel(Gerecht dagschotel){
+        if (!(dagschotel.getType().equals(TypeGerecht.dagschotel))){
+            throw new IllegalArgumentException();
         }
+        this.dagschotel = dagschotel;
     }
 
-    public void voegSoepToe(Gerecht gerecht) {
-        if (this.soep == null){
-            setSoep(gerecht);
-        }else {
-            throw new IllegalArgumentException("Er is al een soep");
-        }
+    public Gerecht getSoep(){
+        return this.soep;
     }
 
-    public void voegDagschotelToe(Gerecht gerecht) {
-        if (this.dagschotel == null){
-            setDagschotel(gerecht);
-        }else {
-            throw new IllegalArgumentException("Er is al een dagschotel");
-        }
+    public Gerecht getVeggie(){ return this.veggie;
     }
 
-    public void voegVeggieToe(Gerecht gerecht) {
-        if (this.veggie == null){
-            setVeggie(gerecht);
-        }else {
-            throw new IllegalArgumentException("Er is al een veggie");
-        }
+    public Gerecht getDagschotel(){
+        return this.dagschotel;
     }
+
 }

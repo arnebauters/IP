@@ -24,7 +24,7 @@ public class MenuController {
     @PostMapping("/dagmenu/add")
     @ResponseStatus(HttpStatus.CREATED)
     public List<DagMenu> addDagMenu(@RequestBody @Valid DagMenu dagMenu){
-        weekMenu.voegMenuToe(dagMenu);
+        weekMenu.addMenu(dagMenu);
        return weekMenu.getAllMenus();
     }
 
