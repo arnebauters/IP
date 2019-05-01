@@ -22,16 +22,31 @@
                 </c:forEach>
             </div>
         </c:if>
-        <form method="post" action="/gerechten/update?beschrijving=${gerecht.name}" novalidate>
+        <form method="post" action="/gerechten/update" novalidate>
             <!-- novalidate in order to be able to run tests correctly -->
-            <p><label for="Beschrijving">Beschrijving</label><input type="text" id="Beschrijving" name="name"
-                                                                    required value="${gerecht.name}"/></p>
-            <p><label for="Type">Type</label><input type="text" id="Type" name="type"
-                                                    required value="${gerecht.type}"/></p>
-            <p><label for="Prijs">Prijs</label><input type="number" id="Prijs" name="price"
-                                                      required value="${gerecht.price}"/></p>
-            <p><input type="submit" id="cancel" name="update" value="Cancel"></p>
-            <p><input type="submit" id="updateGerecht" name="update" value="Update"></p>
+            <input type="hidden" name="id" value="${gerecht.id}">
+            <p>
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" required value="${gerecht.name}"/>
+            </p>
+            <p>
+                <label for="type">Type: </label>
+                <select name="type" id="type" selected= ${gerecht.type}>
+                <c:forEach items="${types}" var="type">
+                    <option value="${type}">${type}</option>
+                </c:forEach>
+            </select>
+            </p>
+            <p>
+                <label for="price">Prijs: </label>
+                <input type="number" id="price" name="price" required value="${gerecht.price}"/>
+            </p>
+            <p>
+                <a href="/gerechten/change"> Cancel</a>
+            </p>
+            <p>
+                <input type="submit" value="Update">
+            </p>
         </form>
     </main>
 </div>

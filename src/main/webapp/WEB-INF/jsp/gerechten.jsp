@@ -20,11 +20,13 @@
         <table>
             <tr>
                 <th>Name</th>
+                <th>Type</th>
                 <th>Price</th>
             </tr>
             <c:forEach var="gerecht" items="${gerechten}">
                 <tr>
                     <td>${gerecht.name}</td>
+                    <td>${gerecht.type}</td>
                     <td>${gerecht.price}</td>
                 </tr>
             </c:forEach>

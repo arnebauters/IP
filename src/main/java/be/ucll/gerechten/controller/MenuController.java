@@ -1,10 +1,11 @@
 package be.ucll.gerechten.controller;
 
 import be.ucll.gerechten.model.DagMenu;
+import be.ucll.gerechten.model.Gerecht;
+import be.ucll.gerechten.model.MyService;
 import be.ucll.gerechten.model.WeekMenu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -13,24 +14,16 @@ import java.util.List;
 @RestController
 public class MenuController {
     @Autowired
-    private WeekMenu weekMenu;
+    private MyService weekMenuService;
 
     @GetMapping("/weekmenu")
-    public List<DagMenu> getMenus() {
-        return weekMenu.getAllMenus();
+    public List<WeekMenu> getMenus() {
+        return weekMenuService.getWeekMenus();
     }
 
-
-    @PostMapping("/dagmenu/add")
-    @ResponseStatus(HttpStatus.CREATED)
-    public List<DagMenu> addDagMenu(@RequestBody @Valid DagMenu dagMenu){
-        weekMenu.addMenu(dagMenu);
-       return weekMenu.getAllMenus();
+    @GetMapping("/weekmenu/{id}")
+    public WeekMenu getWeekMenuById(@PathVariable("id") int id) {
+        return weekMenuService.getWeekMenuById(id).orElseThrow(IllegalArgumentException::new);
     }
 
-    @PutMapping("/dagmenu/change/{date}")
-    public List<DagMenu> updateDagmenu(@PathVariable("date") String date, @RequestBody @Valid DagMenu dagmenu){
-        weekMenu.updateDagmenu(date, dagmenu);
-        return weekMenu.getAllMenus();
-    }
 }

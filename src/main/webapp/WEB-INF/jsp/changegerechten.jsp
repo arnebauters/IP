@@ -21,8 +21,10 @@
                     <c:forEach var="gerecht" items="${gerechten}">
                         <tr>
                             <td>${gerecht.name}</td>
-                            <td><a href="/gerechten/update?beschrijving=${gerecht.name}">update</a></td>
-                            <td><a href="/gerechten/delete?beschrijving=${gerecht.name}">delete</a></td>
+                            <td>${gerecht.type}</td>
+                            <td>${gerecht.price}</td>
+                            <td><a href="/gerechten/update?name=${gerecht.name}">update</a></td>
+                            <td><a href="/gerechten/delete?name=${gerecht.name}">delete</a></td>
                         </tr>
                     </c:forEach>
                 </table>

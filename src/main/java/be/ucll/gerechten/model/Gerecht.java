@@ -4,10 +4,13 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
-@Table(name = "gerecht")
 public class Gerecht {
 
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
     @NotNull
     @NotEmpty
     @Size(min = 4, max = 50)
@@ -18,29 +21,33 @@ public class Gerecht {
     private double price;
 
     @NotNull
-    private String type;
+    private TypeGerecht type;
 
-    public Gerecht(){}
 
-    public Gerecht(double price, String name, String type) {
+    public Gerecht() {
+    }
+
+    public Gerecht(String name, TypeGerecht type, double price) {
         this.price = price;
         this.name = name;
-        setType(type);
+        this.type = type;
     }
 
-    public void setType(String type) {
-        boolean found = false;
-        for (TypeGerecht t : TypeGerecht.values()) {
-            if (t.toString().equals(type)) {
-                this.type = type;
-                found = true;
-            }
-        }
-        if (!found)
-        throw new IllegalArgumentException("Geen geldig type gerecht");
+    public int getId() {
+        return id;
     }
 
-    public String getType(){
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public void setType(TypeGerecht type) {
+        this.type = type;
+    }
+
+
+    public TypeGerecht getType() {
         return type;
     }
 

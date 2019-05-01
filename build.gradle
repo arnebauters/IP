@@ -17,6 +17,11 @@ bootJar {
     version =  '0.1.0'
 }
 
+group 'be.ucll.courses'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
 repositories {
     mavenCentral()
 }
@@ -33,7 +38,6 @@ dependencies {
     compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.10'
     // needed because we use jsp
     compile group: 'org.eclipse.jdt.core.compiler', name: 'ecj', version: '4.4.2'
-
     // needed for JPA
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile('mysql:mysql-connector-java:8.0.13')
@@ -44,5 +48,4 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
-    
 }

@@ -1,41 +1,48 @@
 package be.ucll.gerechten.model;
 
-import be.ucll.gerechten.repository.MenuRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-@Service
+@Entity
 public class WeekMenu {
-    @Autowired
-    MenuRepository menuRepository;
 
-    public WeekMenu() {
+    @Id
+    private int weekMenuId = 0;
+
+    public int getWeekMenuId() {
+        return weekMenuId;
     }
 
-    public void addMenu(DagMenu menu) {
-        menuRepository.save(menu);
+    public void setWeekMenuId(int weekMenuId) {
+        this.weekMenuId = weekMenuId;
     }
 
-    public void deleteMenu(DagMenu menu) {
-        menuRepository.delete(menu);
+    @OneToMany(cascade = CascadeType.ALL)
+    @MapKeyColumn(name = "day_number")
+    private Map<Integer, DagMenu> dagMenus = new HashMap<>();
+
+    public Map<Integer, DagMenu> getDagMenus() {
+        return this.dagMenus;
     }
 
-    public List<DagMenu> getAllMenus() {
-        return menuRepository.findAll();
+    public void setDagMenus(Map<Integer, DagMenu> week) {
+        this.dagMenus = week;
     }
 
-    public DagMenu findMenuByDate(String date) {
-        return menuRepository.findById(date).orElseThrow(IllegalArgumentException::new);
+
+    public void addDagmenu(DagMenu dagMenu) {
+        this.dagMenus.put(dagMenu.getDayOfWeek(), dagMenu);
     }
 
-    public void updateDagmenu(String date, DagMenu dagmenu) {
-        DagMenu menu = findMenuByDate(date);
-        menu.setSoep(dagmenu.getSoep());
-        menu.setVeggie(dagmenu.getVeggie());
-        menu.setDagschotel(dagmenu.getDagschotel());
+    public void deleteDagmenu(DagMenu dagMenu) {
+        this.dagMenus.remove(dagMenu.getDayOfWeek());
+    }
+
+    public boolean dagMenusIsEmpty() {
+        return dagMenus.isEmpty();
     }
 }

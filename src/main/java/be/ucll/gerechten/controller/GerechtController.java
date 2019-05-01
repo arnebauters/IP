@@ -2,6 +2,7 @@ package be.ucll.gerechten.controller;
 
 import be.ucll.gerechten.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,7 +18,7 @@ import java.util.Map;
 @Controller
 public class GerechtController implements WebMvcConfigurer {
     @Autowired
-    private GerechtService gerechtService; //= new GerechtService();
+    private MyService gerechtService;
 
 
     @GetMapping("/")
@@ -45,9 +46,10 @@ public class GerechtController implements WebMvcConfigurer {
     }
 
     @PostMapping("/gerechten/add")
-    public String addFeedback(@Valid Gerecht gerecht, BindingResult bindingResult, Model model) {
+    public String addGerecht(@Valid Gerecht gerecht, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("errors", bindingResult.getFieldErrors());
+            model.addAttribute("types", TypeGerecht.values());
             return "addgerecht";
         } else {
             gerechtService.addGerecht(gerecht);
@@ -55,46 +57,52 @@ public class GerechtController implements WebMvcConfigurer {
             return "gerechten";
         }
     }
-    @GetMapping("/gerechten/delete")
-    public String getMenu(@RequestParam(name = "beschrijving") String name, Model model){
-        model.addAttribute("name", name );
-        return "delete";
+
+    //delete gerecht
+
+    @GetMapping(value = "/gerechten/delete}", params = {"name"})
+    public String deleteGerecht(@RequestParam(name = "name") String name, Model model){
+        Gerecht gerecht = gerechtService.findGerechtByName(name);
+        model.addAttribute("gerecht", gerecht );
+        return "confirmDelete";
     }
-    @PostMapping("/gerechten/delete")
-    public RedirectView deleteGerecht(@RequestParam Map<String,String> requestParams, Model model){
-        String name = requestParams.get("beschrijving");
-        String confirm = requestParams.get("confirm");
-        if (confirm.equals("Nee")){
-            return new RedirectView("/gerechten/change");
-        }else {
-            Gerecht gerecht = gerechtService.findGerechtById(name);
-            gerechtService.deleteGerecht(gerecht);
-            return new RedirectView("/gerechten/change");
-        }
+    @GetMapping(value = "/gerechten/delete", params = {"name"})
+    public RedirectView deleteGerechtConfirm(@RequestParam(name = "name") String name, Model model){
+        Gerecht gerecht = gerechtService.findGerechtByName(name);
+        gerechtService.deleteGerecht(gerecht);
+        return new RedirectView("/gerechten");
     }
 
-    @GetMapping("/gerechten/update")
-    public String updatePagina(@RequestParam (name = "beschrijving") String name, Model model){
-        Gerecht gerecht = gerechtService.findGerechtById(name);
+
+    //update gerecht
+
+    @GetMapping(value = "/gerechten/update", params = {"name"})
+    public String updatePagina(@RequestParam (name = "name") String name, Model model){
+        Gerecht gerecht = gerechtService.findGerechtByName(name);
         model.addAttribute("gerecht", gerecht);
+        model.addAttribute("types", TypeGerecht.values());
         return "updateConfirm";
     }
 
     @PostMapping("/gerechten/update")
-    public String updateGerecht(@RequestParam Map<String,String> requestParams, @Valid Gerecht gerecht, BindingResult bindingResult, Model model){
-        String name = requestParams.get("beschrijving");
-        String update = requestParams.get("update");
-        if (update.equals("Cancel")){
-            return changegerecht(model);
-        }
-        else if (bindingResult.hasErrors()){
-            model.addAttribute("errors", bindingResult.getFieldErrors());
+    @ResponseStatus(HttpStatus.OK)
+    public String updateGerecht(@Valid Gerecht gerecht, Model model, BindingResult bindingResult){
+
+         if (bindingResult.hasErrors()){
+             model.addAttribute("errors", bindingResult.getFieldErrors());
+             model.addAttribute("types", TypeGerecht.values());
             return "updateConfirm";
         }
         else {
-            gerechtService.updateGerecht(name, gerecht);
-            return changegerecht(model);
+            gerechtService.updateGerecht(gerecht);
+            model.addAttribute("gerechten", gerechtService.getAllGerechten());
+            return "gerechten";
 
         }
+    }
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "Requested ID not found!")
+    @ExceptionHandler(value = IllegalArgumentException.class)
+    public void badIdExecptionHandler() {
+        // really nothing to do here
     }
 }
