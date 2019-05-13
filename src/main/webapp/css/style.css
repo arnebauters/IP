@@ -5,7 +5,7 @@
 }
 
 span{
-	color:#f3dc04;
+	color:darkred;
 }
 
 .pay{
@@ -34,8 +34,8 @@ header a {
 body {
 	font-family: arial,sans-serif;
 	font-size: 90%;
-	color: #303d11;
-	background-color: #303d11;
+	color: #3d70b2;
+	background-color: #41d6c3;
 }
 
 div#container {
@@ -65,7 +65,7 @@ nav ul li {
 }
 
 nav ul li a{
-	color: #303d11;
+	color: #3d70b2;
 	text-decoration: none;
 	display: block;
 }
@@ -153,11 +153,11 @@ div#container {
 
 nav ul li {
 	display: block;
-	border-bottom: 1px solid #303d11;
+	border-bottom: 1px solid #3d70b2;
 }
 
 nav ul li:first-child {
-	border-top: 1px solid #303d11;
+	border-top: 1px solid #3d70b2;
 }
 
 label,input,textarea {
@@ -186,7 +186,7 @@ input {
 	max-width: 1000px;
 	}
 	h1 {
-	background-image: url("../images/fiets.png");
+	background-image: url("../images/broodje.png");
 	}
 	
 	nav ul {

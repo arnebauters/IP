@@ -17,9 +17,6 @@ bootJar {
     version =  '0.1.0'
 }
 
-group 'be.ucll.courses'
-version '1.0-SNAPSHOT'
-
 sourceCompatibility = 1.8
 
 repositories {

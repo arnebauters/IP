@@ -1,22 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css"
-          href="/./css/style.css">
-    <title>Gerechten</title>
-</head>
+<html>
+<jsp:include page="head.jsp">
+    <jsp:param name="title" value="Gerechten"/>
+</jsp:include>
 <body>
 <div id="container">
     <jsp:include page="header.jsp">
         <jsp:param name="title" value="Home"/>
     </jsp:include>
+    <main>
     <c:choose>
     <c:when test="${gerechten.size() != 0}">
-    <main>
         <table>
             <tr>
                 <th>Name</th>

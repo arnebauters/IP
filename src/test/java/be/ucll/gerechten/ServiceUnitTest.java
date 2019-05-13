@@ -49,7 +49,7 @@ public class ServiceUnitTest {
     @MockBean
     private MenuRepository menuRepository;
 
-    private Gerecht ok, nok, maybe, deleted;
+    private Gerecht ok, nok, maybe, deleted, prijsTeGroot, prijsTeKlein, naamTeKort, naamTeLang;
     private List<Gerecht> gerechts;
 
     @Before
@@ -58,6 +58,10 @@ public class ServiceUnitTest {
         nok = new Gerecht("nokgerecht",TypeGerecht.dagschotel, 0);
         maybe = new Gerecht("prijs", TypeGerecht.dagschotel, 0.1);
         deleted = new Gerecht("verwijdert", TypeGerecht.soep, 10);
+        prijsTeGroot = new Gerecht("prijstegroot", TypeGerecht.soep, 10.1);
+        prijsTeKlein = new Gerecht("prijsTeKlein", TypeGerecht.veggie, 0.0);
+        naamTeKort = new Gerecht("nok", TypeGerecht.dagschotel, 5);
+        naamTeLang = new Gerecht("dezenaamisveeltelang", TypeGerecht.dagschotel, 5);
         gerechts = new ArrayList<Gerecht>();
         gerechts.add(ok);
         gerechts.add(nok);
@@ -68,7 +72,7 @@ public class ServiceUnitTest {
     public void should_find_Gerecht_by_given_name () {
         // Mock
         // When we ask at the repo for the ok feedback, it will return it
-        Mockito.when(gerechtRepository.findByName(ok.getName())).thenReturn(ok);
+        Mockito.when(myService.findGerechtByName(ok.getName())).thenReturn(ok);
 
         // given
         String name = "friet";
@@ -87,7 +91,7 @@ public class ServiceUnitTest {
     @Test
     public void should_get_all_Gerechts () {
         // Mock
-        Mockito.when(gerechtRepository.findAll()).thenReturn(gerechts);
+        Mockito.when(myService.getAllGerechten()).thenReturn(gerechts);
 
         //when
         List<Gerecht> foundGerechts = myService.getAllGerechten();
@@ -102,7 +106,9 @@ public class ServiceUnitTest {
     @Test
     public void should_add_gerecht () {
         //Mock
-        Mockito.when(gerechtRepository.save(maybe)).thenReturn(maybe);
+        Mockito.when(myService.addGerecht(maybe)).thenReturn(maybe);
+        Mockito.when(myService.addGerecht(ok)).thenReturn(ok);
+        Mockito.when(myService.addGerecht(deleted)).thenReturn(deleted);
 
         //when
         Gerecht addedGerecht = myService.addGerecht(maybe);
@@ -110,6 +116,44 @@ public class ServiceUnitTest {
         //then
         assertThat(addedGerecht.getName()).isEqualTo("prijs");
         assertThat(addedGerecht.getPrice()).isEqualTo(0.1);
-        assertThat(addedGerecht.getPrice()).isEqualTo(TypeGerecht.dagschotel);
+        assertThat(addedGerecht.getType()).isEqualTo(TypeGerecht.dagschotel);
+
+    }
+
+    @Test
+    public void add_gerecht_should_throw_IllegalArgument () {
+        Mockito.when(myService.addGerecht(prijsTeKlein)).thenThrow(IllegalArgumentException.class);
+        Mockito.when(myService.addGerecht(prijsTeGroot)).thenThrow(IllegalArgumentException.class);
+        Mockito.when(myService.addGerecht(naamTeKort)).thenThrow(IllegalArgumentException.class);
+
+    }
+
+    @Test
+    public void given_gerecht_should_be_removed (){
+        //Mockito.when(gerechtRepository.delete(ok)).ge
+        myService.deleteGerecht(ok);
+        Mockito.when(myService.findGerechtByName(ok.getName())).thenThrow(IllegalArgumentException.class);
+    }
+
+    @Test
+    public void removing_gerecht_not_in_repo_should_throw_Execption (){
+        Gerecht nieuwGerecht = new Gerecht("notInDatabase", TypeGerecht.soep, 3);
+    }
+
+
+    @Test
+    public void updating_gerecht_should_update_gerecht (){
+        ok.setName("nieuweNaam");
+        ok.setPrice(6);
+        ok.setType(TypeGerecht.soep);
+
+        myService.updateGerecht(ok);
+        Mockito.when(myService.findGerechtByName(ok.getName())).thenReturn(ok);
+
+        Gerecht updateGerecht = myService.findGerechtByName(ok.getName());
+
+        assertThat(updateGerecht.getName()).isEqualTo("nieuweNaam");
+        assertThat(updateGerecht.getPrice()).isEqualTo(6);
+        assertThat(updateGerecht.getType()).isEqualTo(TypeGerecht.soep);
     }
 }

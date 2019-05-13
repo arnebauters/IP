@@ -13,7 +13,7 @@ public class Gerecht {
 
     @NotNull
     @NotEmpty
-    @Size(min = 4, max = 50)
+    @Size(min = 4, max = 15)
     private String name;
 
     @DecimalMin("0.1")

@@ -20,6 +20,18 @@ public class GerechtBuilder {
         return aGerecht().withName("Spaghetti").withPrice(3).withType(TypeGerecht.dagschotel);
     }
 
+    public static GerechtBuilder aSoep () {
+        return aGerecht().withName("soep").withPrice(3).withType(TypeGerecht.soep);
+    }
+
+    public static GerechtBuilder aVeggie () {
+        return aGerecht().withName("veggie").withPrice(3).withType(TypeGerecht.veggie);
+    }
+
+    public static GerechtBuilder aDagschotel () {
+        return aGerecht().withName("Spaghetti").withPrice(3).withType(TypeGerecht.dagschotel);
+    }
+
     public GerechtBuilder withName (String name) {
         this.name = name;
         return this;

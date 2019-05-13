@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css"
-          href="/./css/style.css">
-    <title>Change gerecht</title>
-</head>
+<html>
+<jsp:include page="head.jsp">
+    <jsp:param name="title" value="Change gerecht"/>
+</jsp:include>
 <body>
 <div id="container">
     <jsp:include page="header.jsp">

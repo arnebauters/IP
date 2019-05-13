@@ -16,7 +16,7 @@ public class DagMenuController {
     @Autowired
     private MyService dagMenuService;
 
-    @GetMapping
+    @GetMapping("/dagmenus")
     public List<DagMenu> getAllDagMenus(){return dagMenuService.getDagmenus();}
 
     @PostMapping("/dagmenu/add")
