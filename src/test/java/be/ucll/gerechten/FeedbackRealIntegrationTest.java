@@ -1,4 +1,4 @@
-package be.ucll.gerechten;
+/*package be.ucll.gerechten;
 
 import be.ucll.gerechten.model.Gerecht;
 import be.ucll.gerechten.model.TypeGerecht;
@@ -38,9 +38,8 @@ public class FeedbackRealIntegrationTest {
         String jsonInBodyResponse = "[{ 'name': 'Friet, 'type': 'dagschotel', 'price': 3}]";
         JSONAssert.assertEquals(jsonInBodyResponse, response.getBody(), true);
     }
-
     private String createURLWithPort(String uri) {
         return "http://localhost:" + port + uri;
     }
 
-}
+}*/

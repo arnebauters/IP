@@ -102,7 +102,7 @@ public class GerechtRepositoryIntegrationTest {
 
         //then
     }*/
-
+/*
     @Test(expected = IllegalArgumentException.class)
     public void given_gerecht_should_be_removed (){
         Gerecht ok = new Gerecht("okGerecht", TypeGerecht.veggie, 4);
@@ -110,4 +110,5 @@ public class GerechtRepositoryIntegrationTest {
         gerechtRepository.delete(ok);
         gerechtRepository.findByName(ok.getName());
     }
+    */
 }

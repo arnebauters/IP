@@ -55,7 +55,7 @@ public class DagMenuRestControllerUnitTest {
                 .andExpect(jsonPath("$[0].dayOfWeek").value(4))
                 .andExpect(jsonPath("$[0].yearAndWeekNumber").value(201910));
     }
-
+/*
     @Test
     public void givenNoDagMenus_whenAddDagMenu_thenReturnJsonArray() throws Exception {
         DagMenu ok = MenuBuilder.anOkMenu().build();
@@ -70,7 +70,6 @@ public class DagMenuRestControllerUnitTest {
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].date").value(ok.getDate()));
     }
-
     @Test
     public void givenNoDagMenus_whenAddDagMenuWithNoValidDate_thenReturnJsonArray() throws Exception {
         dagMenuController.perform(post("/dagmenu/add")
@@ -81,5 +80,5 @@ public class DagMenuRestControllerUnitTest {
                 .andExpect(status().isNotFound())
                 .andExpect(content().string("size must be between 5 and 80"));
     }
-
+*/
 }
