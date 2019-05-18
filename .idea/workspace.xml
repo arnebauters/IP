@@ -6,13 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1713848-9875-4afb-8385-cf69f13d9702" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/DagMenuRestControllerUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/DagMenuRestControllerUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/FeedbackRealIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/FeedbackRealIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/GerechtRepositoryIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/GerechtRepositoryIntegrationTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="e1713848-9875-4afb-8385-cf69f13d9702" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -272,7 +266,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558189298772" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558190357296" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -491,7 +485,7 @@
       <workItem from="1557751637586" duration="9121000" />
       <workItem from="1557908817800" duration="2166000" />
       <workItem from="1558010284051" duration="15000" />
-      <workItem from="1558186774309" duration="1979000" />
+      <workItem from="1558186774309" duration="2781000" />
     </task>
     <servers />
   </component>
@@ -528,7 +522,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116144000" />
+    <option name="totallyTimeSpent" value="116946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -550,7 +544,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3285968" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50040483" side_tool="true" weight="0.3268206" />
       <window_info anchor="bottom" id="Build" order="11" weight="0.3285968" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.3261105" />
@@ -948,7 +942,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Web (Arne_Bauters_main)|Web</last-edited>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
