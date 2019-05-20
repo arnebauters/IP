@@ -26,6 +26,8 @@ public class DagMenu {
     @ManyToOne(cascade = CascadeType.DETACH)
     private Gerecht dagschotel;
 
+    @NotEmpty
+    @Size(min = 4, max = 12)
     private String dayName; // MONDAY, TUESDAY, ...
     private int dayOfWeek; // 1 = monday
     private int yearAndWeekNumber; // year 2019 and week 7 => 201907
@@ -45,6 +47,9 @@ public class DagMenu {
     }
 
     public void setDate(LocalDate date) {
+        if (date == null){
+            throw new IllegalArgumentException("Date cannot be empty");
+        }
         this.date = date;
         setDayName(date.getDayOfWeek().toString());
         // need this to get the number of the week in the year - 1st week, 2nd week, ...
