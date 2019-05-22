@@ -8,11 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e1713848-9875-4afb-8385-cf69f13d9702" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/ucll/gerechten/controller/DagMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/ucll/gerechten/controller/DagMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/ucll/gerechten/model/DagMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/ucll/gerechten/model/DagMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/DagMenuRestControllerUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/DagMenuRestControllerUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/FeedbackRealIntegrationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/FeedbackRestControllerIntegrationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/DagMenuRestControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/be/ucll/gerechten/DagMenuRestControllerIntegrationTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -48,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/be/ucll/gerechten/DagMenuRestControllerUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
+            <state>
               <caret line="122" column="32" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -60,7 +56,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/controller/DagMenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
+            <state relative-caret-position="629">
               <caret line="50" selection-start-line="50" selection-end-line="50" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -72,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/model/MyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="1258">
               <caret line="90" selection-start-line="90" selection-end-line="90" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -86,7 +82,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/model/WeekMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="272">
               <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -98,8 +94,32 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/be/ucll/gerechten/DagMenuRestControllerIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="31" column="14" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="14" />
+            <state relative-caret-position="935">
+              <caret line="55" column="74" selection-start-line="55" selection-start-column="74" selection-end-line="55" selection-end-column="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/be/ucll/gerechten/MenuBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="20" column="59" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/be/ucll/gerechten/GerechtRepositoryIntegrationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="112" column="6" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,22 +130,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/model/DagMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-630">
+            <state relative-caret-position="374">
               <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1663#1664#0" expanded="true" />
-                <element signature="e#1695#1696#0" expanded="true" />
-                <element signature="e#1742#1743#0" expanded="true" />
-                <element signature="e#1784#1785#0" expanded="true" />
-                <element signature="e#1818#1819#0" expanded="true" />
-                <element signature="e#1848#1849#0" expanded="true" />
-                <element signature="e#2051#2052#0" expanded="true" />
-                <element signature="e#2091#2092#0" expanded="true" />
-                <element signature="e#3017#3018#0" expanded="true" />
-                <element signature="e#3044#3045#0" expanded="true" />
-                <element signature="e#3308#3309#0" expanded="true" />
-                <element signature="e#3337#3338#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -207,10 +215,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-6" />
-    <option name="y" value="-6" />
-    <option name="width" value="1293" />
-    <option name="height" value="705" />
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="1944" />
+    <option name="height" value="1044" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -311,8 +319,8 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558375988956" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558515053466" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../web4/ChatApp" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -349,6 +357,22 @@
       <module name="Arne_Bauters_test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DagMenuRestControllerIntegrationTest.givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Arne_Bauters_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.ucll.gerechten.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.ucll.gerechten" />
+      <option name="MAIN_CLASS_NAME" value="be.ucll.gerechten.DagMenuRestControllerIntegrationTest" />
+      <option name="METHOD_NAME" value="givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -410,11 +434,13 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All in Arne_Bauters_test" />
+      <item itemvalue="JUnit.DagMenuRestControllerIntegrationTest.givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus" />
       <item itemvalue="Spring Boot.Application" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in Arne_Bauters_test" />
+        <item itemvalue="JUnit.DagMenuRestControllerIntegrationTest.givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus" />
       </list>
     </recent_temporary>
   </component>
@@ -482,50 +508,53 @@
       <workItem from="1558186774309" duration="3561000" />
       <workItem from="1558354364054" duration="32000" />
       <workItem from="1558358040278" duration="7371000" />
-      <workItem from="1558370772642" duration="4956000" />
+      <workItem from="1558370772642" duration="5377000" />
+      <workItem from="1558421461389" duration="606000" />
+      <workItem from="1558510049592" duration="1393000" />
+      <workItem from="1558513584917" duration="1644000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DagMenuRestControllerIntegrationTest_givenDagMenus_whenDeleteDagMenu_thenStatus200AndJSONofDagMenus - 2019.05.20 at 19h 55m 37s.xml">
-      <configuration name="DagMenuRestControllerIntegrationTest.givenDagMenus_whenDeleteDagMenu_thenStatus200AndJSONofDagMenus" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DagMenuRestControllerIntegrationTest_givenDagMenus_whenDeleteDagMenu_thenStatus200AndJSONofDagMenus - 2019.05.20 at 19h 56m 07s.xml">
-      <configuration name="DagMenuRestControllerIntegrationTest.givenDagMenus_whenDeleteDagMenu_thenStatus200AndJSONofDagMenus" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DagMenuRestControllerIntegrationTest_givenDagMenus_whenDeleteDagMenu_thenStatus200AndJSONofDagMenus - 2019.05.20 at 19h 58m 27s.xml">
-      <configuration name="DagMenuRestControllerIntegrationTest.givenDagMenus_whenDeleteDagMenu_thenStatus200AndJSONofDagMenus" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DagMenuRestControllerIntegrationTest - 2019.05.20 at 19h 58m 46s.xml">
-      <configuration name="DagMenuRestControllerIntegrationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DagMenuRestControllerIntegrationTest_givenDagMenus_whenUpdateDagMenu_thenStatus201AndJSONofDagMenus - 2019.05.20 at 20h 02m 56s.xml">
-      <configuration name="DagMenuRestControllerIntegrationTest.givenDagMenus_whenUpdateDagMenu_thenStatus201AndJSONofDagMenus" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DagMenuRestControllerIntegrationTest_givenDagMenus_whenUpdateDagMenu_thenStatus201AndJSONofDagMenus - 2019.05.20 at 20h 03m 38s.xml">
-      <configuration name="DagMenuRestControllerIntegrationTest.givenDagMenus_whenUpdateDagMenu_thenStatus201AndJSONofDagMenus" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_Arne_Bauters_test - 2019.05.20 at 20h 05m 04s.xml">
+    <history-entry file="All_in_Arne_Bauters_test - 2019.05.22 at 10h 28m 16s.xml">
       <configuration name="All in Arne_Bauters_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arne_Bauters_test - 2019.05.20 at 20h 06m 43s.xml">
+    <history-entry file="All_in_Arne_Bauters_test - 2019.05.22 at 10h 32m 48s.xml">
       <configuration name="All in Arne_Bauters_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arne_Bauters_test - 2019.05.20 at 20h 08m 35s.xml">
+    <history-entry file="All_in_Arne_Bauters_test - 2019.05.22 at 10h 37m 44s.xml">
       <configuration name="All in Arne_Bauters_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arne_Bauters_test - 2019.05.20 at 20h 10m 36s.xml">
+    <history-entry file="All_in_Arne_Bauters_test - 2019.05.22 at 10h 38m 39s.xml">
+      <configuration name="All in Arne_Bauters_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Arne_Bauters_test - 2019.05.22 at 10h 42m 49s.xml">
+      <configuration name="All in Arne_Bauters_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DagMenuRestControllerIntegrationTest_givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus - 2019.05.22 at 10h 47m 17s.xml">
+      <configuration name="DagMenuRestControllerIntegrationTest.givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DagMenuRestControllerIntegrationTest_givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus - 2019.05.22 at 10h 48m 24s.xml">
+      <configuration name="DagMenuRestControllerIntegrationTest.givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DagMenuRestControllerIntegrationTest_givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus - 2019.05.22 at 10h 49m 01s.xml">
+      <configuration name="DagMenuRestControllerIntegrationTest.givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DagMenuRestControllerIntegrationTest_givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus - 2019.05.22 at 10h 49m 26s.xml">
+      <configuration name="DagMenuRestControllerIntegrationTest.givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Arne_Bauters_test - 2019.05.22 at 10h 49m 45s.xml">
       <configuration name="All in Arne_Bauters_test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130085000" />
+    <option name="totallyTimeSpent" value="134149000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2750533" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28825912" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -535,7 +564,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.72806066" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.42984015" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -758,16 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/ucll/gerechten/GerechtRepositoryIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="112" column="6" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -808,10 +827,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/ucll/gerechten/MenuBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="60" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="60" />
+        <state relative-caret-position="3196">
+          <caret line="188" column="32" selection-start-line="188" selection-start-column="32" selection-end-line="188" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/be/ucll/gerechten/DagMenuRestControllerUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="122" column="32" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/controller/DagMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/model/MyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4416#4417#0" expanded="true" />
+            <element signature="e#4463#4464#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/model/WeekMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/model/DagMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/be/ucll/gerechten/GerechtRepositoryIntegrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="112" column="6" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -828,78 +913,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
+    <entry file="file://$PROJECT_DIR$/src/test/java/be/ucll/gerechten/MenuBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3196">
-          <caret line="188" column="32" selection-start-line="188" selection-start-column="32" selection-end-line="188" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/model/DagMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1663#1664#0" expanded="true" />
-            <element signature="e#1695#1696#0" expanded="true" />
-            <element signature="e#1742#1743#0" expanded="true" />
-            <element signature="e#1784#1785#0" expanded="true" />
-            <element signature="e#1818#1819#0" expanded="true" />
-            <element signature="e#1848#1849#0" expanded="true" />
-            <element signature="e#2051#2052#0" expanded="true" />
-            <element signature="e#2091#2092#0" expanded="true" />
-            <element signature="e#3017#3018#0" expanded="true" />
-            <element signature="e#3044#3045#0" expanded="true" />
-            <element signature="e#3308#3309#0" expanded="true" />
-            <element signature="e#3337#3338#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/ucll/gerechten/DagMenuRestControllerUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="122" column="32" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/model/MyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4416#4417#0" expanded="true" />
-            <element signature="e#4463#4464#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/model/WeekMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/ucll/gerechten/controller/DagMenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="93">
+          <caret line="20" column="59" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -908,8 +925,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/be/ucll/gerechten/DagMenuRestControllerIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="14" />
+        <state relative-caret-position="935">
+          <caret line="55" column="74" selection-start-line="55" selection-start-column="74" selection-end-line="55" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

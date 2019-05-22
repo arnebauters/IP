@@ -15,6 +15,7 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.awt.*;
 import java.time.LocalDate;
 
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
@@ -36,18 +37,23 @@ public class DagMenuRestControllerIntegrationTest {
     @Autowired
     private GerechtRepository gerechtRepository;
 
+
+    @After
+    public void after(){
+
+    }
+
     @Test
     public void givenDagMenus_whenGetDagMenus_thenStatus200AndJSONofDagMenus() throws Exception {
-        createTestMenu(LocalDate.parse("2019-05-05"));
-
+        createTestMenu();
         dagMenuController.perform(get("/dagmenus")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].date").value("2019-05-05"))
+                .andExpect(jsonPath("$[0].date").value("2010-10-10"))
                 .andExpect(jsonPath("$[0].dayName").value("Sunday"))
                 .andExpect(jsonPath("$[0].dayOfWeek").value(7))
-                .andExpect(jsonPath("$[0].yearAndWeekNumber").value(201918))
+                .andExpect(jsonPath("$[0].yearAndWeekNumber").value(201040))
                 .andExpect(jsonPath("$[0].soep.name").value("soep"))
                 .andExpect(jsonPath("$[0].dagschotel.name").value("Spaghetti"))
                 .andExpect(jsonPath("$[0].veggie.name").value("veggie"));
@@ -116,14 +122,11 @@ public class DagMenuRestControllerIntegrationTest {
     }
 
 
-    private void createTestMenu(LocalDate date) {
-        Gerecht soep = GerechtBuilder.aSoep().build();
-        Gerecht veggie = GerechtBuilder.aVeggie().build();
-        Gerecht hoofdgerecht = GerechtBuilder.aDagschotel().build();
-        DagMenu dagMenu = new DagMenu(date, soep,hoofdgerecht , veggie);
-        gerechtRepository.saveAndFlush(soep);
-        gerechtRepository.saveAndFlush(hoofdgerecht);
-        gerechtRepository.saveAndFlush(veggie);
+    private void createTestMenu() {
+        DagMenu dagMenu = MenuBuilder.anOkMenu().build();
+        gerechtRepository.saveAndFlush(dagMenu.getVeggie());
+        gerechtRepository.saveAndFlush(dagMenu.getSoep());
+        gerechtRepository.saveAndFlush(dagMenu.getDagschotel());
         repository.saveAndFlush(dagMenu);
     }
 
